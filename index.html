@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Basic SEO -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aman — Affiliate Marketer & Web Designer</title>
+  <meta name="description" content="Hi, I’m Aman — Affiliate Marketer and Web Designer. I work with Indian edtech brands like Physics Wallah, Unacademy, Testbook, Adda247 and more. I build high-converting funnels, manage ads, SEO, social media, and craft modern websites." />
+  <link rel="canonical" href="https://your-domain.com/" />
+  <meta name="theme-color" content="#0d1117" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aman — Affiliate Marketer & Web Designer" />
+  <meta property="og:description" content="Trusted by leading Indian edtech brands. I design, optimize, and scale digital growth." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
+  <meta property="og:image" content="https://your-domain.com/og-image.jpg" />
+
+  <!-- Schema.org Person -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Person",
+    "name":"Aman",
+    "jobTitle":"Affiliate Marketer, Web Designer",
+    "image":"https://your-domain.com/aman.jpg",
+    "description":"Affiliate Marketer & Web Designer working with Indian edtech companies like Physics Wallah, Unacademy, Testbook, Adda247.",
+    "knowsAbout":[
+      "Affiliate Marketing","Frontend Development","Backend Development","SEO","Google Ads","Meta Ads",
+      "Lead Generation","Social Media Management","Graphic Design","Video Editing","Presentation Design"
+    ],
+    "sameAs":[
+      "https://www.linkedin.com/in/your-link",
+      "https://twitter.com/your-handle",
+      "https://instagram.com/your-handle",
+      "https://github.com/your-handle"
+    ],
+    "url":"https://your-domain.com/"
+  }
+  </script>
+
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0d1117;
+      --card:#121826;
+      --soft:#0b1220;
+      --text:#e6edf3;
+      --muted:#9aa4b2;
+      --brand:#00ffd5;
+      --brand-2:#7c4dff;
+      --accent:#ffaa00;
+      --ring: rgba(0,255,213,.35);
+      --radius:14px;
+      --shadow:0 10px 25px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;scroll-behavior:smooth}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,92%);margin-inline:auto}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:1000;background:rgba(13,17,23,.6);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:700}
+    .logo i{color:var(--brand)}
+    .nav-links{display:flex;gap:22px}
+    .nav-links a{padding:10px 12px;border-radius:10px;color:var(--muted)}
+    .nav-links a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+    .menu-toggle{display:none;font-size:26px}
+    @media (max-width:900px){
+      .menu-toggle{display:block}
+      .nav-links{position:absolute;top:72px;left:0;right:0;background:rgba(13,17,23,.96);flex-direction:column;padding:18px;border-bottom:1px solid rgba(255,255,255,.06);display:none}
+      .nav-links.open{display:flex}
+    }
+
+    /* Buttons */
+    .btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--brand),#26ffe3);color:#0d1117;border:none;padding:12px 18px;border-radius:12px;font-weight:700;cursor:pointer;box-shadow:0 10px 20px rgba(0,255,213,.2);transition:transform .2s ease, box-shadow .2s ease}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 18px 30px rgba(0,255,213,.28)}
+    .btn.secondary{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.12)}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(255,255,255,.08);font-size:14px}
+
+    /* Hero */
+    .hero{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;min-height:88vh;padding:48px 0}
+    .hero h1{font-family:Poppins,Inter,sans-serif;font-size:48px;line-height:1.1;margin:0}
+    .gradient-text{background:linear-gradient(90deg,#26ffe3 0%,#7c4dff 50%,#ffaa00 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+    .sub{color:var(--muted);font-size:18px;margin:16px 0 26px}
+    .hero-card{
+      background:radial-gradient(1200px 400px at 0% 0%,rgba(124,77,255,.12),transparent),
+                 linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)
+    }
+    .stats{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+    .stat{flex:1 1 140px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:14px;text-align:center}
+    .stat h3{margin:0;font-size:28px}
+    .stat p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    .hero-visual{
+      perspective:900px
+    }
+    .card-3d{
+      transform-style:preserve-3d;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px;box-shadow:var(--shadow);animation:float 6s ease-in-out infinite
+    }
+    .card-3d .tag{display:inline-block;margin-bottom:10px}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+    .badge{padding:8px 10px;border-radius:999px;border:1px dashed rgba(255,255,255,.15);font-size:13px;color:var(--muted);background:rgba(255,255,255,.03)}
+    .bg3d{position:absolute;inset:0;z-index:-1}
+    @keyframes float{
+      0%{transform:rotateY(0deg) translateY(0)}
+      50%{transform:rotateY(6deg) translateY(-8px)}
+      100%{transform:rotateY(0deg) translateY(0)}
+    }
+    @media (max-width:1000px){
+      .hero{grid-template-columns:1fr;gap:24px}
+    }
+
+    /* Trusted */
+    .trusted{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-top:20px}
+    .trusted .logo-chip{
+      padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);color:#cbd5e1;filter:grayscale(1);transition:filter .2s ease
+    }
+    .trusted .logo-chip:hover{filter:grayscale(0)}
+
+    /* Sections */
+    section{padding:72px 0}
+    .section-title{font-family:Poppins,sans-serif;font-size:30px;margin:0 0 14px}
+    .section-sub{color:var(--muted);margin:0 0 24px}
+
+    /* About */
+    .about{display:grid;grid-template-columns:1fr 1.2fr;gap:28px}
+    .about .profile{
+      border-radius:18px;overflow:hidden;border:1px solid rgba(255,255,255,.08);
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      box-shadow:var(--shadow)
+    }
+    .about .profile img{width:100%;aspect-ratio:4/4.5;object-fit:cover}
+    .about .content p{color:#cfd7e1}
+    .skills{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .skill{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;font-size:14px}
+    .skill i{color:var(--brand);margin-right:8px}
+    @media (max-width:900px){
+      .about{grid-template-columns:1fr}
+      .skills{grid-template-columns:repeat(2,1fr)}
+    }
+
+    /* Services */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow);
+      transition:transform .2s ease, box-shadow .2s ease
+    }
+    .service:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(0,0,0,.45)}
+    .service i{font-size:24px;color:var(--brand)}
+    @media (max-width:1000px){.services{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.services{grid-template-columns:1fr}}
+
+    /* Experience timeline */
+    .timeline{position:relative;padding-left:22px}
+    .timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),var(--brand-2))}
+    .item{position:relative;margin-bottom:18px;padding:14px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px}
+    .item::before{content:"";position:absolute;left:-2px;top:18px;width:10px;height:10px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px var(--ring)}
+
+    /* Numbers */
+    .numbers{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .numbers .kpi{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:16px;text-align:center}
+    .numbers .kpi h3{margin:0;font-size:30px}
+    .numbers .kpi p{margin:6px 0 0;color:var(--muted);font-size:14px}
+    @media (max-width:900px){.numbers{grid-template-columns:repeat(2,1fr)}}
+
+    /* Portfolio */
+    .filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+    .filters .fbtn{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);cursor:pointer;color:#cfd7e1}
+    .filters .fbtn.active{background:linear-gradient(135deg,var(--brand),#26ffe3);color:#0d1117;border:none}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .work{position:relative;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:var(--soft)}
+    .work img{width:100%;height:220px;object-fit:cover;filter:contrast(1.05) saturate(1.05)}
+    .work .overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.6),transparent 50%);opacity:0;transition:opacity .2s ease}
+    .work:hover .overlay{opacity:1}
+    .work .meta{position:absolute;left:12px;bottom:12px;right:12px;display:flex;justify-content:space-between;align-items:center}
+    .work .meta .title{font-weight:700}
+    @media (max-width:1000px){.grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.grid{grid-template-columns:1fr}}
+
+    /* Testimonials */
+    .testimonials{position:relative;overflow:hidden}
+    .slider{display:flex;gap:16px;transition:transform .6s ease}
+    .tcard{min-width:calc(33.333% - 10px);background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:16px}
+    .tcard .who{display:flex;align-items:center;gap:12px;margin-top:10px}
+    .tcard img{width:42px;height:42px;border-radius:50%;object-fit:cover}
+    @media (max-width:1000px){.tcard{min-width:calc(50% - 8px)}}
+    @media (max-width:640px){.tcard{min-width:100%}}
+
+    /* Contact */
+    .contact-wrap{
+      display:grid;grid-template-columns:1fr 1fr;gap:22px
+    }
+    .contact-card{
+      background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));
+      border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px;box-shadow:var(--shadow)
+    }
+    form .row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    @media (max-width:900px){.contact-wrap{grid-template-columns:1fr} form .row{grid-template-columns:1fr}}
+    .field{position:relative;margin-bottom:12px}
+    .field input,.field textarea{
+      width:100%;padding:14px 12px;border-radius:12px;background:#0b1220;border:1px solid rgba(255,255,255,.1);color:var(--text);outline:none
+    }
+    .field label{
+      position:absolute;left:12px;top:10px;color:#9aa4b2;background:#0b1220;padding:0 6px;transform:translateY(-50%);font-size:12px
+    }
+
+    /* Footer */
+    footer{padding:28px 0;border-top:1px solid rgba(255,255,255,.06);color:var(--muted);text-align:center}
+
+    /* Utility */
+    .row-flex{display:flex;gap:12px;flex-wrap:wrap}
+    .spacer{height:18px}
+  </style>
+</head>
+<body>
+  <!-- 3D Background Canvas -->
+  <canvas id="bg3d" class="bg3d" aria-hidden="true"></canvas>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav">
+      <div class="logo">
+        <i class="ri-blaze-line"></i> <span>Aman</span>
+      </div>
+      <nav>
+        <button class="menu-toggle" aria-label="Menu"><i class="ri-menu-3-line"></i></button>
+        <div class="nav-links" id="navLinks">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#work">Work</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero container">
+    <div class="hero-card" data-aos="fade-up">
+      <div class="chip"><i class="ri-verified-badge-line"></i> Available for projects</div>
+      <h1>Hi, I’m <span class="gradient-text">Aman</span></h1>
+      <h2 id="typed" class="sub"></h2>
+      <p class="sub">Affiliate Marketer & Web Designer working with Indian edtech companies like Physics Wallah, Unacademy, Testbook, Adda247 and more. I build high-converting funnels, manage Google & Meta ads, handle social media, and optimize SEO end-to-end.</p>
+      <div class="row-flex">
+        <a href="#contact" class="btn"><i class="ri-rocket-line"></i> Hire Me</a>
+        <a href="#work" class="btn secondary"><i class="ri-layout-grid-line"></i> View Portfolio</a>
+      </div>
+
+      <div class="trusted">
+        <span class="logo-chip">Physics Wallah</span>
+        <span class="logo-chip">Unacademy</span>
+        <span class="logo-chip">Testbook</span>
+        <span class="logo-chip">Adda247</span>
+        <span class="logo-chip">More</span>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <h3 class="counter" data-target="120">0</h3>
+          <p>Campaigns Launched</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="85">0</h3>
+          <p>Landing Pages Built</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="250">0</h3>
+          <p>Leads/mo Avg</p>
+        </div>
+        <div class="stat">
+          <h3 class="counter" data-target="20">0</h3>
+          <p>Happy Partners</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual" data-aos="zoom-in">
+      <div class="card-3d">
+        <span class="tag chip"><i class="ri-code-s-slash-line"></i> Full-stack by code</span>
+        <h3 style="margin:10px 0">Design. Build. Grow.</h3>
+        <p class="sub">From frontend to backend, SEO to ad ops — I connect the dots for growth.</p>
+        <div class="badges">
+          <span class="badge">HTML • CSS • JS</span>
+          <span class="badge">Node • Express</span>
+          <span class="badge">SEO • Schema</span>
+          <span class="badge">Google & Meta Ads</span>
+          <span class="badge">Lead Gen</span>
+          <span class="badge">Graphics & Video</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="container">
+    <h2 class="section-title">About me</h2>
+    <p class="section-sub">A credible, results-driven partner for education brands and creators.</p>
+    <div class="about">
+      <div class="profile" data-aos="fade-right">
+        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=1200&auto=format&fit=crop" alt="Aman profile portrait">
+      </div>
+      <div class="content" data-aos="fade-left">
+        <p>
+          I’m Aman, an Affiliate Marketer and Web Designer focused on conversions. I’ve collaborated with major Indian edtech brands, crafting high-performing pages, funnels, and campaigns that turn clicks into customers. I handle the full stack: coding clean UIs, integrating backend logic, optimizing SEO, and scaling paid ads.
+        </p>
+        <div class="skills">
+          <div class="skill"><i class="ri-megaphone-line"></i> Affiliate Marketing</div>
+          <div class="skill"><i class="ri-layout-4-line"></i> Frontend (HTML, CSS, JS)</div>
+          <div class="skill"><i class="ri-database-2-line"></i> Backend (Node/Express)</div>
+          <div class="skill"><i class="ri-search-eye-line"></i> SEO & Schema</div>
+          <div class="skill"><i class="ri-bar-chart-2-line"></i> Google & Meta Ads</div>
+          <div class="skill"><i class="ri-links-line"></i> Lead Generation</div>
+          <div class="skill"><i class="ri-share-line"></i> Social Media Handling</div>
+          <div class="skill"><i class="ri-paint-brush-line"></i> Graphics Design</div>
+          <div class="skill"><i class="ri-scissors-cut-line"></i> Video & Presentation Editing</div>
+        </div>
+        <div class="spacer"></div>
+        <div class="row-flex">
+          <a href="#" class="btn"><i class="ri-download-2-line"></i> Download Resume</a>
+          <a href="#contact" class="btn secondary"><i class="ri-mail-line"></i> Let’s Talk</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container">
+    <h2 class="section-title">Services</h2>
+    <p class="section-sub">Clear deliverables that move the needle.</p>
+    <div class="services">
+      <div class="service" data-aos="flip-up">
+        <i class="ri-bullseye-line"></i>
+        <h3>Affiliate funnels</h3>
+        <p>High-converting landing pages, tracking setup, and persuasive content to maximize EPC and ROI.</p>
+      </div>
+      <div class="service" data-aos="flip-up" data-aos-delay="100">
+        <i class="ri-layout-2-line"></i>
+        <h3>Web design & dev</h3>
+        <p>Responsive, fast, and accessible sites with clean code, structured data, and CMS integration.</p>
+      </div>
+      <div class="service" data-aos="flip-up" data-aos-delay="200">
+        <i class="ri-seo-line"></i>
+        <h3>SEO growth</h3>
+        <p>On-page, technical SEO, schema, and content strategy to climb SERPs and sustain growth.</p>
+      </div>
+      <div class="service" data-aos="flip-up" data-aos-delay="300">
+        <i class="ri-advertisement-line"></i>
+        <h3>Google & Meta ads</h3>
+        <p>Full-funnel campaigns, creative testing, retargeting, and analytics to scale profitably.</p>
+      </div>
+      <div class="service" data-aos="flip-up" data-aos-delay="400">
+        <i class="ri-user-shared-line"></i>
+        <h3>Social media</h3>
+        <p>Content calendars, growth experiments, and community management to build loyal audiences.</p>
+      </div>
+      <div class="service" data-aos="flip-up" data-aos-delay="500">
+        <i class="ri-brush-line"></i>
+        <h3>Creative studio</h3>
+        <p>Graphics, video edits, and presentation design aligned to your brand and funnel objectives.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section class="container">
+    <h2 class="section-title">Experience</h2>
+    <p class="section-sub">Recent highlights from collaborations in the edtech space.</p>
+    <div class="timeline">
+      <div class="item" data-aos="fade-up">
+        <strong>Physics Wallah</strong> — Affiliate & Landing Page Optimization
+        <div class="sub">Improved CTR and sign-ups with A/B-tested messaging, social proof, and faster page load.</div>
+      </div>
+      <div class="item" data-aos="fade-up" data-aos-delay="100">
+        <strong>Unacademy</strong> — Search + Social Ads
+        <div class="sub">Built intent-led campaigns with keyword clustering and creative refresh cadence.</div>
+      </div>
+      <div class="item" data-aos="fade-up" data-aos-delay="200">
+        <strong>Testbook</strong> — SEO Content & Schema
+        <div class="sub">Structured data and topical clusters to lift long-tail queries.</div>
+      </div>
+      <div class="item" data-aos="fade-up" data-aos-delay="300">
+        <strong>Adda247</strong> — Lead Gen Funnels
+        <div class="sub">Multi-step lead flows with crystal-clear value props and trust indicators.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Impact Numbers -->
+  <section class="container">
+    <h2 class="section-title">By the numbers</h2>
+    <p class="section-sub">Measurable outcomes that reflect consistent execution.</p>
+    <div class="numbers">
+      <div class="kpi" data-aos="zoom-in"><h3 class="counter" data-target="3.5">0</h3><p>Avg ROAS</p></div>
+      <div class="kpi" data-aos="zoom-in" data-aos-delay="100"><h3 class="counter" data-target="1.8">0</h3><p>Sec LCP</p></div>
+      <div class="kpi" data-aos="zoom-in" data-aos-delay="200"><h3 class="counter" data-target="42">0</h3><p>SEO Wins</p></div>
+      <div class="kpi" data-aos="zoom-in" data-aos-delay="300"><h3 class="counter" data-target="15">0</h3><p>Industries</p></div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="work" class="container">
+    <h2 class="section-title">Selected work</h2>
+    <p class="section-sub">A mix of landing pages, campaigns, and creative work.</p>
+
+    <div class="filters">
+      <button class="fbtn active" data-filter="all">All</button>
+      <button class="fbtn" data-filter="web">Web</button>
+      <button class="fbtn" data-filter="ads">Ads</button>
+      <button class="fbtn" data-filter="seo">SEO</button>
+      <button class="fbtn" data-filter="design">Design</button>
+    </div>
+
+    <div class="grid" id="portfolioGrid">
+      <a class="work" data-cat="web" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1523726491678-bf852e717f6a?q=80&w=1200&auto=format&fit=crop" alt="Conversion-optimized landing page">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Landing page — PW</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+      <a class="work" data-cat="ads" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1556157382-97eda2d62296?q=80&w=1200&auto=format&fit=crop" alt="Google & Meta ad creatives">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Creative set — Unacademy</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+      <a class="work" data-cat="seo" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop" alt="SEO case study">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Schema & content — Testbook</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+      <a class="work" data-cat="design" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1512295767273-ac109ac3acfa?q=80&w=1200&auto=format&fit=crop" alt="Design system">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Design system — BrandX</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+      <a class="work" data-cat="web" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Full-stack web app">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Full-stack app — LMS</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+      <a class="work" data-cat="ads" href="#" target="_blank">
+        <img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1200&auto=format&fit=crop" alt="Retargeting campaigns">
+        <div class="overlay"></div>
+        <div class="meta">
+          <div class="title">Retargeting — Adda247</div>
+          <span class="chip"><i class="ri-external-link-line"></i> View</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="container testimonials">
+    <h2 class="section-title">What partners say</h2>
+    <p class="section-sub">Real feedback from the teams I’ve supported.</p>
+    <div class="slider" id="slider">
+      <div class="tcard" data-aos="fade-up">
+        <p>“Aman elevated our landing pages and reduced cost per lead within weeks. Clear communication and fast iterations.”</p>
+        <div class="who">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&auto=format&fit=crop" alt="Client">
+          <div><strong>Growth Manager</strong><div class="muted">Edtech brand</div></div>
+        </div>
+      </div>
+      <div class="tcard" data-aos="fade-up" data-aos-delay="100">
+        <p>“Smart media buying and crisp creative testing. We scaled spend while holding ROAS steady.”</p>
+        <div class="who">
+          <img src="https://images.unsplash.com/photo-1547425260-76bcadfb4f2c?q=80&w=400&auto=format&fit=crop" alt="Client">
+          <div><strong>Performance Lead</strong><div class="muted">Learning platform</div></div>
+        </div>
+      </div>
+      <div class="tcard" data-aos="fade-up" data-aos-delay="200">
+        <p>“Technical SEO and schema were on point. Organic sessions grew meaningfully in 90 days.”</p>
+        <div class="who">
+          <img src="https://images.unsplash.com/photo-1544005314-3c56b94f72fb?q=80&w=400&auto=format&fit=crop" alt="Client">
+          <div><strong>Content Head</strong><div class="muted">Test prep</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container">
+    <h2 class="section-title">Let’s work together</h2>
+    <p class="section-sub">Tell me about your goals — I’ll respond within 24 hours.</p>
+    <div class="contact-wrap">
+      <div class="contact-card" data-aos="fade-right">
+        <form id="contactForm" action="#" method="POST" novalidate>
+          <div class="row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input id="subject" name="subject" type="text" placeholder="Project or inquiry" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Briefly describe your needs..." required></textarea>
+          </div>
+          <button class="btn" type="submit"><i class="ri-send-plane-line"></i> Send Message</button>
+        </form>
+      </div>
+
+      <div class="contact-card" data-aos="fade-left">
+        <h3>Contact details</h3>
+        <p class="sub">Prefer email or social? I’m responsive on both.</p>
+        <div class="row-flex">
+          <span class="chip"><i class="ri-mail-line"></i> hello@your-domain.com</span>
+          <span class="chip"><i class="ri-smartphone-line"></i> +91-98XXXXXX</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="row-flex">
+          <a class="chip" href="#" target="_blank"><i class="ri-linkedin-fill"></i> LinkedIn</a>
+          <a class="chip" href="#" target="_blank"><i class="ri-twitter-x-line"></i> Twitter</a>
+          <a class="chip" href="#" target="_blank"><i class="ri-instagram-line"></i> Instagram</a>
+          <a class="chip" href="#" target="_blank"><i class="ri-github-line"></i> GitHub</a>
+        </div>
+        <div class="spacer"></div>
+        <p class="sub">Located in India • Open to remote and on-site collaborations.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Aman — Affiliate Marketer & Web Designer. All rights reserved.
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.min.js"></script>
+  <!-- Lightweight 3D: simple particles on canvas (no external 3D engine) -->
+  <script>
+    // Typed
+    new Typed('#typed', {
+      strings: [
+        'Affiliate Marketer',
+        'Web Designer & Developer',
+        'Google & Meta Ads Expert',
+        'SEO & Lead Generation',
+        'Graphics, Video & Presentations'
+      ],
+      typeSpeed: 50, backSpeed: 30, backDelay: 1200, loop: true
+    });
+
+    // AOS
+    AOS.init({ once:true, duration:700, easing:'ease-out-cubic' });
+
+    // Mobile nav
+    const menuBtn = document.querySelector('.menu-toggle');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', ()=> navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+    // Counters
+    const counters = document.querySelectorAll('.counter');
+    const fmt = n => (Number(n) % 1 !== 0 ? Number(n).toFixed(1) : Math.floor(n));
+    const obs = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          const el = entry.target;
+          const target = parseFloat(el.getAttribute('data-target'));
+          let current = 0; const inc = target/80;
+          const tick = ()=>{
+            current += inc;
+            if(current < target){ el.textContent = fmt(current); requestAnimationFrame(tick); }
+            else { el.textContent = target; }
+          };
+          tick();
+          obs.unobserve(el);
+        }
+      });
+    },{threshold:.4});
+    counters.forEach(c=>obs.observe(c));
+
+    // Portfolio filter
+    const filterBtns = document.querySelectorAll('.fbtn');
+    const items = document.querySelectorAll('.work');
+    filterBtns.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        filterBtns.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        items.forEach(it=>{
+          const show = f === 'all' || it.dataset.cat === f;
+          it.style.display = show ? 'block' : 'none';
+        });
+      });
+    });
+
+    // Testimonials slider (auto)
+    const slider = document.getElementById('slider');
+    let slideIndex = 0;
+    function autoSlide(){
+      const cards = slider.children.length;
+      slideIndex = (slideIndex + 1) % cards;
+      const width = slider.querySelector('.tcard').offsetWidth + 16;
+      slider.style.transform = `translateX(-${slideIndex * width}px)`;
+    }
+    setInterval(autoSlide, 3500);
+
+    // Canvas particles background
+    const canvas = document.getElementById('bg3d');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+
+    function resize(){
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = Math.max(window.innerHeight, document.body.scrollHeight);
+      initParticles();
+    }
+    window.addEventListener('resize', resize);
+
+    function initParticles(){
+      const count = Math.floor((w*h)/15000); // density
+      particles = Array.from({length:count}).map(()=>({
+        x: Math.random()*w,
+        y: Math.random()*h,
+        z: Math.random()*1 + .2,
+        vx: (Math.random()-.5)*.4,
+        vy: (Math.random()-.5)*.4
+      }));
+    }
+
+    function draw(){
+      ctx.clearRect(0,0,w,h);
+      // gradient backdrop glow
+      const g = ctx.createRadialGradient(w*0.8, h*0.1, 80, w*0.5, h*0.2, Math.max(w,h));
+      g.addColorStop(0, "rgba(0,255,213,0.15)");
+      g.addColorStop(0.5, "rgba(124,77,255,0.12)");
+      g.addColorStop(1, "rgba(13,17,23,0)");
+      ctx.fillStyle = g;
+      ctx.fillRect(0,0,w,h);
+
+      // particles
+      particles.forEach(p=>{
+        p.x += p.vx; p.y += p.vy;
+        if(p.x<0||p.x>w) p.vx*=-1;
+        if(p.y<0||p.y>h) p.vy*=-1;
+
+        const size = 1.2 + p.z*1.8;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, size, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(255,255,255,${0.25 + p.z*0.35})`;
+        ctx.fill();
+      });
+
+      // connections
+      for(let i=0;i<particles.length;i++){
+        for(let j=i+1;j<particles.length;j++){
+          const a = particles[i], b = particles[j];
+          const dx = a.x-b.x, dy = a.y-b.y, d = Math.hypot(dx,dy);
+          if(d < 95){
+            ctx.strokeStyle = `rgba(124,77,255,${(1 - d/95)*0.15})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+          }
+        }
+      }
+
+      requestAnimationFrame(draw);
+    }
+
+    resize();
+    draw();
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Simple client-side form handler (replace with backend or Formspree)
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      alert('Thanks, ' + (data.name || 'there') + '! Your message has been sent.');
+      form.reset();
+    });
+  </script>
+</body>
+</html>
