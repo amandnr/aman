@@ -509,29 +509,40 @@
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="container">
-    <h2 class="section-title">Let’s work together</h2>
-    <p class="section-sub">Tell me about your goals — I’ll respond within 24 hours.</p>
-    <div class="contact-wrap">
-      <div class="contact-card" data-aos="fade-right">
-       <!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/xkgvnavz"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
-</form>
-      </div>
+<section id="contact" class="container">
+  <h2 class="section-title">Let’s work together</h2>
+  <p class="section-sub">Tell me about your goals — I’ll respond within 24 hours.</p>
 
+  <div class="contact-wrap">
+    <div class="contact-card" data-aos="fade-right">
+      <!-- Updated form with Formspree -->
+      <form id="contactForm" action="https://formspree.io/f/xkgvnavz" method="POST">
+        <div class="row">
+          <div class="field">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" required>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="subject">Subject</label>
+          <input id="subject" name="subject" type="text" placeholder="Project or inquiry" required>
+        </div>
+
+        <div class="field">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Briefly describe your needs..." required></textarea>
+        </div>
+
+        <button class="btn" type="submit"><i class="ri-send-plane-line"></i> Send Message</button>
+      </form>
+    </div>
+  </div>
+</section>
       <div class="contact-card" data-aos="fade-left">
         <h3>Contact details</h3>
         <p class="sub">Prefer email or social? I’m responsive on both.</p>
